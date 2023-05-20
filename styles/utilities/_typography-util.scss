@@ -1,13 +1,13 @@
 @use "../abstracts" as *;
 
-@each $unit-name, $unit-value in $font-sizes {
-  .fs-heading-#{$unit-name} {
-    font-size: $unit-value;
-    @if $unit-name > 600 {
-      line-height: 1.1;
-    }
-  }
-}
+// @each $unit-name, $unit-value in $font-sizes {
+//   .fs-heading-#{$unit-name} {
+//     font-size: $unit-value;
+//     @if $unit-name > 600 {
+//       line-height: 1.1;
+//     }
+//   }
+// }
 
 // .fs-heading-s {
 //   font-size: unit(16);
