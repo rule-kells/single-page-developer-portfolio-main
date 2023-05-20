@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "colors" as *;
+@use "typography" as *;
+@use "units" as *;
+
+// color function
+@function clr($color, $shade) {
+  @if map.has-key($clr-palette, $color, $shade) {
+    @return map.get($clr-palette, $color, $shade);
+  } @else {
+    @error '$colors does not have that color!';
+  }
+}
+
+// @function fs($font-size) {
+//   @if map.has-key($font-sizes, $font-size) {
+//     @return map.get($font-sizes, $font-size);
+//   } @else {
+//     @error '$font-sizes does not have that size!';
+//   }
+// }
+
+// font weight funtion
+@function fw($value) {
+  @if map.has-key($fw, $value) {
+    @return map.get($fw, $value);
+  } @else {
+    @error '$sizes does not have that size!';
+  }
+}
+
+// unit function
+@function unit($unit) {
+  @if map.has-key($units, $unit) {
+    @return map.get($units, $unit);
+  } @else {
+    @error '$sizes does not have that size!';
+  }
+}
+
+// convert px to rem
+@function pxToRem($unit) {
+  @return math.div($unit, 16px) * 1rem;
+}
+
+@mixin fontSize($unit) {
+  font-size: $unit;
+  font-size: calculateRem($unit);
+}
