@@ -2,8 +2,6 @@
 @use "sass:math";
 @use "sass:map";
 @use "breakpoints" as *;
-// @use "typography" as *;
-// @use "" as *;
 
 @mixin mq($unit) {
   @if map.has-key($breakpoints, $unit) {

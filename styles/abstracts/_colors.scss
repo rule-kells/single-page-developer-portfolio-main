@@ -1,13 +1,15 @@
 $clr-palette: (
   primary: (
+    300: hsl(153, 71%, 59%),
     400: hsl(0, 100%, 67%),
     500: hsl(259, 100%, 65%),
     // 800: darkblue,
   ),
   neutral: (
     200: hsl(0, 0%, 94%),
-    300: hsl(0, 0%, 86%),
+    300: hsl(0, 0%, 85%),
     600: hsl(0, 1%, 44%),
+    800: hsl(0, 0%, 14%),
     900: hsl(0, 0%, 8%),
   ),
   // clr-black: (
@@ -15,7 +17,7 @@ $clr-palette: (
   // ),
   // clr-white: (
   //   "white": hsl(0, 0%, 100%),
-  // ),,,,,,,,,,,,,,,,
+  // ),,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 
 //this is largle based on Google's Material Theme
