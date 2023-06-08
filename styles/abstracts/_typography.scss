@@ -1,8 +1,15 @@
 @use "./mixins" as *;
 
-// $ff-logo: "ainslie-sans", sans-serif;
-// $ff-primary: "", sans-serif;
-// $ff-secondary: "noto-sans", sans-serif;
+// for the logo and any branding or related to brand identity 
+// letter spacing, uppercasing 
+// $ff-logo: new-farm, sans-serif;
+
+// for headings, navs, buttons
+// letter spacing, uppercasing 
+// $ff-primary: gira-sans, sans-serif;
+
+// body 
+// $ff-secondary: merriweather,serif;
 
 $ff-primary: "Space Grotesk", sans-serif;
 

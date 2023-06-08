@@ -4,7 +4,8 @@
   --max-width: #{pxToRem($container-max-width)};
   --padding: #{$padding-mod} * 2;
 
-  width: min(100% - var(--padding), var(--max-width));
+  width: min(100, var(--max-width));
+  padding-inline: 1rem;
   margin-inline: auto;
 }
 
@@ -23,7 +24,9 @@
 .container[data-type="hero"] {
   --max-width: #{pxToRem(735px)};
 
-  width: min(100% - var(--padding), var(--max-width));
+  width: min(100%, var(--max-width));
+  padding-inline: 1rem;
+  // padding-inline: var(--padding);
   margin-inline: auto;
 
   @include mq(desktop) {
@@ -31,7 +34,7 @@
   }
 }
 
-.flow > * + * {
+.flow>*+* {
   margin-top: var(--gap, 1rem);
 }
 
@@ -70,7 +73,7 @@
   display: grid;
   gap: var(--grid-gap, $grid-gap);
 
-  & > * {
+  &>* {
     max-width: pxToRem(500px);
     margin-inline: auto;
   }
@@ -84,12 +87,12 @@
 .d-grid-2-col {
   display: grid;
   justify-content: center;
-  grid-template-rows: 383px 244px;
-  grid-template-columns: 343px;
+  grid-template-rows: pxToRem(383px) pxToRem(244px);
+  grid-template-columns: pxToRem(343px);
   align-items: center;
 
   @include mq(tablet) {
-    grid-template-columns: 413.56px 30.88px 290.56px;
+    grid-template-columns: pxToRem(413.56px) pxToRem(30.88px) pxToRem(290.56px);
     justify-content: space-between;
   }
 }
@@ -97,18 +100,14 @@
 .grid-auto-fit {
   display: grid;
   gap: var(--grid-gap, $grid-gap);
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(pxToRem(342px), 100%), 1fr)
-  );
+  grid-template-columns: repeat(auto-fit,
+      minmax(min(pxToRem(342px), 100%), 1fr));
 
   align-items: center;
 
   @include mq(desktop) {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min(pxToRem(540px), 100%), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit,
+        minmax(min(pxToRem(540px), 100%), 1fr));
   }
 }
 
@@ -139,7 +138,7 @@
   color: clr(neutral, 900);
   text-transform: uppercase;
 
-  & + p {
+  &+p {
     margin-top: 0;
   }
 }

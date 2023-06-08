@@ -27,9 +27,9 @@ header {
 .hero {
   display: block;
   text-align: center;
-  position: relative;
+
   z-index: 1;
-  transform: translateY(pxToRem(-120px));
+  transform: translateY(pxToRem(-100px));
   // overflow-y: visible;
   // overflow-x: hidden;
 
@@ -37,7 +37,22 @@ header {
     text-align: left;
   }
 
+
+  .hero__bg--pattern-rings {
+    position: absolute;
+    top: 100px;
+    right: 50%;
+  }
+
+  .hero__bg--pattern-circle {
+    top: 254px;
+    left: 85%;
+    position: absolute;
+  }
+
+
   &__content {
+    position: relative;
     max-width: 445px;
     z-index: 2;
 
@@ -113,6 +128,17 @@ header {
   text-align: center;
   overflow-x: hidden;
 
+  &::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-image: url("/assets/images/pattern-rings.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    transform: translate(50%, 0);
+    z-index: 0;
+  }
 
   &+.skills {
     margin-top: 24px;
@@ -215,6 +241,21 @@ header {
   background-color: clr(neutral, 800);
   isolation: isolate;
 
+  &__bg {
+    position: relative;
+
+    &::before {
+      content: "";
+      inset: 0;
+      position: absolute;
+      background-image: url("/assets/images/pattern-rings.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left bottom;
+      transform: translate(-50%, 6%);
+      z-index: 0;
+    }
+  }
 
   // form content
   &__content {
