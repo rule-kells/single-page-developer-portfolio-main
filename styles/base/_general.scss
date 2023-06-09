@@ -1,5 +1,10 @@
 @use "../abstracts/" as *;
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: clr(neutral, 900);
   color: clr(neutral, 300);
@@ -12,11 +17,29 @@ header {
   position: relative;
   padding-block: pxToRem(20px) pxToRem(49px);
   z-index: 2;
+
+  @include mq(tablet) {
+    padding-block: pxToRem(29px) 0;
+  }
+
 }
 
 .nav__primary {
+
+  @include mq(tablet) {
+
+    &.d-flex-2-col-spaced {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
   .branding-logo {
     margin-bottom: pxToRem(20px);
+
+    @include mq(tablet) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -28,10 +51,32 @@ header {
   display: block;
   text-align: center;
 
-  z-index: 1;
-  transform: translateY(pxToRem(-100px));
-  // overflow-y: visible;
-  // overflow-x: hidden;
+  & .d-grid-2-col {
+    display: block;
+
+    @include mq(tablet) {
+      display: grid;
+    }
+  }
+
+  .hero__img img {
+    position: absolute;
+    top: 20px;
+    bottom: auto;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+
+    @include mq(tablet) {
+      top: 0;
+      right: 0;
+      bottom: auto;
+      left: auto;
+
+
+
+    }
+  }
 
   @include mq(tablet) {
     text-align: left;
@@ -46,24 +91,39 @@ header {
 
   .hero__bg--pattern-circle {
     top: 254px;
-    left: 85%;
+    left: 88%;
     position: absolute;
+    z-index: 1;
+
+    @include mq(tablet) {
+      top: 362px;
+    }
+
   }
 
 
   &__content {
     position: relative;
     max-width: 445px;
+    margin-block-start: 341px;
     z-index: 2;
+
+    @include mq(tablet) {
+      margin-block-start: 151px;
+    }
 
     h1 {
       span {
-        width: 100%;
         text-decoration: underline pxToRem(4px) solid clr(primary, 300);
         text-underline-offset: 0.6rem;
 
         .text-center & {
           margin-inline: auto;
+        }
+
+        @include mq(tablet) {
+          margin-block-start: 0;
+          text-underline-offset: 1rem;
         }
       }
     }
@@ -113,7 +173,7 @@ header {
       width: 100%;
       height: 1px;
       background-color: clr(primary, 300);
-      margin-top: 10px;
+      margin-top: 6px;
 
       .text-center & {
         margin-inline: auto;
@@ -284,7 +344,7 @@ header {
     width: 100%;
     height: 1px;
     background-color: $clr-white;
-    margin-top: 87px;
+    margin-top: pxToRem(87px);
 
 
     .text-center & {

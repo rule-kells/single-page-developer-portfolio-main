@@ -25,9 +25,15 @@
   --max-width: #{pxToRem(735px)};
 
   width: min(100%, var(--max-width));
-  padding-inline: 1rem;
+  // padding-inline: 1rem;
   // padding-inline: var(--padding);
   margin-inline: auto;
+
+  @include mq(tablet) {
+    // padding-inline: 0;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+  }
 
   @include mq(desktop) {
     --max-width: #{pxToRem(1110px)};
@@ -86,10 +92,10 @@
 
 .d-grid-2-col {
   display: grid;
-  justify-content: center;
-  grid-template-rows: pxToRem(383px) pxToRem(244px);
-  grid-template-columns: pxToRem(343px);
-  align-items: center;
+  // justify-content: center;
+  // grid-template-rows: pxToRem(383px) pxToRem(244px);
+  // grid-template-columns: pxToRem(343px);
+  // align-items: center;
 
   @include mq(tablet) {
     grid-template-columns: pxToRem(413.56px) pxToRem(30.88px) pxToRem(290.56px);
