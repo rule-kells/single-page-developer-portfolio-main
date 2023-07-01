@@ -6,18 +6,25 @@
 @mixin mq($unit) {
   @if map.has-key($breakpoints, $unit) {
     $breakpoint: map-get($breakpoints, $unit);
+
     @media screen and (min-width: $breakpoint) {
       @content;
     }
-  } @else if meta.type-of($unit) == number {
+  }
+
+  @else if meta.type-of($unit)==number {
     @if math.is-unitless($unit) {
       @error 'when using a number with @mq() make sure to include a unit';
-    } @else {
+    }
+
+    @else {
       @media screen and (min-width: $unit) {
         @content;
       }
     }
-  } @else {
+  }
+
+  @else {
     @error 'the keyword #{$unit} is not in the $breakpoints map';
   }
 }

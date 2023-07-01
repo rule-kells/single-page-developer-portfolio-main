@@ -59,7 +59,7 @@ header {
     }
   }
 
-  .hero__img img {
+  &__img img {
     position: absolute;
     top: 20px;
     bottom: auto;
@@ -72,8 +72,6 @@ header {
       right: 0;
       bottom: auto;
       left: auto;
-
-
 
     }
   }
